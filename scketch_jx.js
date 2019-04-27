@@ -8,15 +8,9 @@ function setup() {
     slider.position(20,height+40);
     slider2 = createSlider(0,5, 5);
     slider2.position(20,height+60);
-
-    // Set text characteristics
-    //textFont(font);
-    //textSize(fontsize);
-    //textAlign(LEFT, LEFT);
     grid = new Grid();
-    grid.w = 10;
+    grid.w = 4; //Square proportion
     grid.debug = false;
-    //grid.debug = true;
     grid.construtor(height,width);
     grid.generate();
 }

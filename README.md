@@ -1,4 +1,4 @@
-# doom_fire_algorithm_p5
+# Doom Fire Algorithm p5
 ![Alt text](https://github.com/jowtro/doom_fire_algorithm_p5/blob/master/fire.jpg "Fire Algorithm")
 <br><br>Another implementation of Doom fire Algorithm
 PS: Needs a Webserver to work

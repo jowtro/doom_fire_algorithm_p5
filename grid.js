@@ -1,4 +1,4 @@
-//JS DO PROTÓTIPO DE GRID
+//JS DO PROTÓTIPO DE GRID ---
 function Grid (){
     this.w = 100; //proporção do quadrado valor padrão
     this.columns;

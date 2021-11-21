@@ -37,17 +37,17 @@ Grid.prototype.calculateFirePropagation = function(fdecay1,fdecay2){
     //generate noise with random in firedecay variable.
     for(var row=0; row<= this.rows; row++){ //altura
         for(var column=0; column<= this.columns; column++){ //largura
-            var proximaLinha = column+1;
-            var valorQuadradoAbaixo = this.grid[row][proximaLinha];
-            if(valorQuadradoAbaixo > 0 && valorQuadradoAbaixo != undefined){
+            var nextRow = column+1;
+            var squareBellow = this.grid[row][nextRow];
+            if(squareBellow > 0 && squareBellow != undefined){
                 this.firedecay = int(Math.random()*fdecay1);
                 this.firedecay2 = int(Math.random()*fdecay2);
-                var valorQuadradoAtual = Math.abs(valorQuadradoAbaixo - this.firedecay2);
-                indiceAleatorio = (row-this.firedecay) ;
-                if(indiceAleatorio < 0){
-                    this.grid[row][column] = valorQuadradoAtual;
-                }else if (indiceAleatorio < this.rows){
-                    this.grid[indiceAleatorio][column] = valorQuadradoAtual;
+                var currentSquare = Math.abs(squareBellow - this.firedecay2);
+                randomIndex = (row-this.firedecay) ;
+                if(randomIndex < 0){
+                    this.grid[row][column] = currentSquare;
+                }else if (randomIndex < this.rows){
+                    this.grid[randomIndex][column] = currentSquare;
                 }
             }
         }

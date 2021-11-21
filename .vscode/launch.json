@@ -1,0 +1,14 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "pwa-chrome",
+            "request": "launch",
+            "name": "Open grid_p5_jx.htm",
+            "file": "/home/jowtro/4fun/doom_fire_algorithm_p5/grid_p5_jx.htm"
+        }
+    ]
+}

@@ -11,7 +11,7 @@ function setup() {
     grid = new Grid();
     grid.w = 4; //Square proportion
     grid.debug = false;
-    grid.construtor(height,width);
+    grid.constructor(height,width);
     grid.generate();
 }
 

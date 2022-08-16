@@ -1,7 +1,7 @@
 //Grid Prototype
 // TODO convert to ES6
 function Grid() {
-    this.w = 50; // default value , would be overrides by scketch_js
+    this.w = 50; // default value , would be overwritten by sketch_js
     this.columns;
     this.rows;
     this.grid = [];
@@ -25,17 +25,17 @@ function Grid() {
 }
 
 //Creates a 2D dimensional Array
-Grid.prototype.construtor = function (rows, columns) {
+Grid.prototype.constructor = function (rows, columns) {
     this.columns = int(columns / this.w);
     this.rows = int(rows / this.w);
-    for (var i = 0; i <= this.rows; i++) { //altura
+    for (var i = 0; i <= this.rows; i++) { //Height
         this.grid[i] = [];
     }
 }
 //Generate value to the arrays indices
 Grid.prototype.generate = function () {
-    for (var j = 0; j <= this.rows; j++) { //altura
-        for (var i = 0; i <= this.columns; i++) { //largura
+    for (var j = 0; j <= this.rows; j++) { //Height
+        for (var i = 0; i <= this.columns; i++) { //Width
             if (j === (this.rows))//ultima linha
             {
                 this.grid[i][j] = 36; //preenche com 36
@@ -49,8 +49,8 @@ Grid.prototype.generate = function () {
 //Calculate the fire propagation
 Grid.prototype.calculateFirePropagation = function (fdecay1, fdecay2) {
     //generate noise with random in firedecay variable.
-    for (var row = 0; row <= this.rows; row++) { //altura
-        for (var column = 0; column <= this.columns; column++) { //largura
+    for (var row = 0; row <= this.rows; row++) { //Height
+        for (var column = 0; column <= this.columns; column++) { //Width
             var nextRow = column + 1;
             var squareBellow = this.grid[row][nextRow];
             if (squareBellow > 0 && squareBellow != undefined) {
@@ -71,13 +71,13 @@ Grid.prototype.calculateFirePropagation = function (fdecay1, fdecay2) {
 //Draw the fire
 Grid.prototype.setFireSource = function () {
     //Draw rects
-    for (var j = 0; j <= this.rows; j++) { //altura
-        for (var i = 0; i <= this.columns; i++) { //largura
+    for (var j = 0; j <= this.rows; j++) { //Height
+        for (var i = 0; i <= this.columns; i++) { //Width
             if (!this.debug) {
                 noStroke();
             } else { stroke(0); }
             //Fills the pixel accordinly with the value of array
-            //takes the color of the original pallete based on the value of array.
+            //takes the color of the original pallette based on the value of array.
             //Render just cells that have value higher than 3
             if (this.grid[i][j] > 3) {
                 fill(
@@ -98,8 +98,8 @@ Grid.prototype.setFireSource = function () {
 //draw the cells to debug
 Grid.prototype.drawText = function () {
     //Draw numbers
-    for (var j = 0; j <= this.rows; j++) { //largura
-        for (var i = 0; i <= this.columns; i++) { //altura
+    for (var j = 0; j <= this.rows; j++) { //Width
+        for (var i = 0; i <= this.columns; i++) { //Height
             fill(0);
             //Array content
             text(str(this.grid[i][j]), i * this.w, j * this.w);
